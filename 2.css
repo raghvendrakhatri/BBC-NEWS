@@ -1,0 +1,38 @@
+html
+{
+    font-size: 12px;
+}
+#full
+{
+    flex-direction: column;
+}
+#rksec
+{
+    flex-direction: column;
+}
+#fullst1
+{
+    width: 100%;
+    text-align: center;
+}
+#sec1
+{
+    width: 100%;
+    text-align: center;
+}
+#sec2
+{
+    justify-content: center;
+}
+#fullst2
+{
+    justify-content: center;
+}
+.content3 ,.content4, .contbox, .content1
+{
+    justify-content: center;
+}
+#watched
+{
+    justify-content: center;
+}

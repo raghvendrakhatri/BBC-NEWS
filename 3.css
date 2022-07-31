@@ -1,0 +1,32 @@
+#img-bbc
+{
+    width: 100%;
+    /* padding: 2px auto;
+     */
+     text-align: center;
+}
+.back-black
+{
+    height: 50px;
+    width: 60px;
+    font-size: 2.5rem;
+    line-height: 50px;
+}
+ #signup
+{
+    width: 100%;
+    text-align: center;
+    border: none;
+    font-size: 2rem;
+} 
+#mysearch
+{
+    display: none;
+}
+nav #first ul
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap:wrap ;
+}

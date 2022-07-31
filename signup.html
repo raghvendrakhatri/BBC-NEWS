@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BBC-signup</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Abel&display=swap" rel="stylesheet">
+    <link rel="stylesheet" media=" screen and (max-width:1290px)" href="signup.css">
+    <link rel="stylesheet" media=" screen and (max-width:843px)" href="signup1.css">
+    <link rel="stylesheet" media=" screen and (max-width:489px)" href="signup2.css">
+    <style>
+        *
+        {
+            margin: 0px;
+            padding: 0px;
+        }
+        #body
+        {
+            height: 100vh;
+            width: 100vw;
+            position: relative;
+            /* background: linear-gradient(to right, rgb(51 249 42 / 78%) 0%, rgb(56 197 251 / 64%) 100%); */
+        }
+        #body::before
+        {
+            content: '';
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            background: url('img23.jpg')center center/cover fixed;
+            height: 100%;
+            width: 100%;
+            /* opacity: 0.978; */
+        }
+        .sign-up
+        {
+            position: fixed;
+            top: 8%;
+            left: 37%;
+            /* height: 500px; */
+            height: auto;
+            width: 27%;
+            background-color: rgba(114, 114, 106, 0.678);
+            border-radius: 10px;
+            box-shadow: 2px 2px 5px 1px black;
+            /* display: none; */
+        }
+        #head
+        {
+            display: block;
+            text-align: center;
+            font-size: 1.7rem;
+            color: beige;
+            font-family: 'Abel', sans-serif;
+            position: relative;
+            /* overflow: hidden; */
+
+        }
+        #head::after
+        {
+            content: '';
+            position: absolute;
+            /* bottom: 0px; */
+            left: 200px;
+            display: block;
+            height: 4px;
+            width: 100px;
+            background-color: black;
+            transition: all 0.2s linear;
+            /* overflow: hidden; */
+            opacity: 0;
+        }
+        #head:hover::after
+        {
+            opacity: 1;
+            left:100px;
+        }
+        #fill
+        {
+            font-size: 15px;
+            
+            margin: 8px 5px 5px 30px;
+        }
+        .text
+        {
+            font-size: 1.2rem;
+            margin: 8px 5px 0px 30px;
+            font-family: 'Abel', sans-serif;
+            color: white;
+        }
+        .field
+        {
+            height: 24px;
+            /* width: 200px; */
+            width: 60%;
+            border-radius: 7px;
+            outline: none;
+            border: none;
+            padding-left: 8px;
+            margin-left: 30px;
+        }
+        #i2
+        {
+            margin-left: 37px;
+        }
+        #User-name , #Password, #Email, #Confirm-Password
+        {
+            margin-bottom: 0px;
+        }
+        .inp
+        {
+            margin: 3px 10px 0px 30px;
+            background-color: white;
+            /* border: 2px solid red; */
+            border-radius: 8px;
+            height: auto;
+        }
+        .input
+        {
+            height: 28px;
+            /* width: 250px; */
+            width: 80%;
+            outline: none;
+            border: none;
+            font-size: 16px;
+        }
+        .icon
+        {
+            display: inline-block;
+            font-size: 23px;
+            /* margin: 2px 3px; */
+            margin-top: 1px;
+            margin-left: 4px;
+            margin-right: 7px;
+        }
+        #btn
+        {
+            display: block;
+            height: 35px;
+            width: 120px;
+            background-color: burlywood;
+            color: brown;
+            font-family: 'Abel', sans-serif;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border-radius: 13px;
+            margin: 7px auto;
+            outline: none;
+            border: 1px solid brown;
+            transition: all 0.2s linear;
+        }
+        #btn:hover
+        {
+            color: burlywood;
+            background-color: brown;
+            border: 1px solid burlywood;
+            box-shadow: 1px 1px 5px 1px black;
+        }
+        #line
+        {
+            font-size: 1.2rem;
+            text-align: center;
+            font-family: 'Abel', sans-serif;
+        }
+        #this
+        {
+            text-align: center;
+            margin: 10px;
+        }
+        .myico
+        {
+            display: inline-block;
+            height: 35px;
+            width: 40px;
+            /* background-color: white; */
+            margin: 5px 10px;
+            transition: all 0.3s linear;
+        }
+        .myico:hover
+        {
+            border-radius: 50%;
+            transform: scale(1.3);
+        }
+        .myico .fa
+        {
+            font-size: 1.3rem;
+            line-height: 35px;
+        }
+        #face{
+            background-color:  #3D5A98;
+            color: white;
+        }
+        #face:hover
+        {
+            background-color: white;
+            color: #3D5A98;
+        }
+        #twit
+        {
+            background-color: #1DA1F2;
+            color: white;
+        }
+        #twit:hover
+        {
+            background-color: white;
+            color: #1DA1F2;
+        }
+        #linked
+        {
+            background-color:#0077B5 ;
+            color: white;
+        }
+        #linked:hover
+        {
+            background-color: white;
+            color: #0077B5;
+        }
+        .msg
+        {
+            display: block;
+            text-align: center;
+            color:white;
+            font-family: 'Abel', sans-serif;
+            font-size: 1rem;
+        }
+    </style>
+</head>
+<body id="body">
+    <form action="" onsubmit=" return myFunc()">
+   <div class="sign-up" id="mydiv">
+       <p id="head">Sign up</p>
+       <p id="fill">Please fill in this form to create an account with BBC News</p>
+       <p class="text" id="first-name">Firstname <input type="text" class="field"
+        id="i1" placeholder="Type Here" onblur="myfock(this)" onfocus="remo1()"></p>
+        <span id="msg1" class="msg"></span>
+
+       <p class="text" id="last-name">Lastname<input type="text" class="field"
+        id="i2" placeholder="Type Here" onblur="myfock(this)" onfocus="remo2()"></p>
+        <span id="msg2" class="msg"></span>
+        
+        <p class="text" id="User-name"><label for="i3">Username</label></p>
+        <p class="inp"><span class="icon"><i class="fa fa-user-o" aria-hidden="true"></i>
+        </span><input type="text" placeholder="Type Username" id="i3" class="input" onblur="myfock(this)" onfocus="remo3()"></p>
+        <span id="msg3" class="msg" ></span>
+
+        <p class="text" id="Email"><label for="i4">Email</label></p>
+        <p class="inp"><span class="icon"><i class="fa fa-envelope" aria-hidden="true"></i>
+        </span><input type="text" placeholder="Type Email" id="i4" class="input" onfocus="remo4()"></p>
+        <span id="msg4" class="msg"></span>
+        
+        <p class="text" id="Password"><label for="i5">Password</label></p>
+        <p class="inp"><span class="icon"><i class="fa fa-lock" aria-hidden="true"></i>
+        </span><input type="password" placeholder="Type Password" id="i5" class="input" onkeyup="passW()" onfocus="remo5()"></p>
+        <span id="msg5" class="msg"></span>
+
+        <p class="text" id="Confirm-Password"><label for="i6">Confirm Password</label></p>
+        <p class="inp"><span class="icon"><i class="fa fa-lock" aria-hidden="true"></i>
+        </span><input type="password" placeholder="Confirm Password" id="i6" class="input" onkeyup="checkpass()" onfocus="remo6()"></p>
+        <span id="msg6" class="msg"></span>
+
+        <button id="btn">Submit</button>
+        <p id="line">Sign up using</p>
+        <p id="this">
+            <a href="#" class="myico" id="face"><i class="fa fa-facebook" aria-hidden="true"></i>
+            </a>
+            <a href="#" class="myico" id="twit"><i class="fa fa-twitter" aria-hidden="true"></i>
+            </a>
+            <a href="#" class="myico" id="linked"><i class="fa fa-linkedin" aria-hidden="true"></i>
+            </a>
+        </p>
+    </form>
+   </div>
+   <script>
+       function myfock(id) {
+           id.value=id.value.toUpperCase();
+       }
+       function myFunc()
+       {
+           let value1=document.getElementById('i1').value;
+           let value2=document.getElementById('i2').value;
+           let value3=document.getElementById('i3').value;
+           let value4=document.getElementById('i4').value;
+           let value5=document.getElementById('i5').value;
+           let value6=document.getElementById('i6').value;
+
+           let msg1=document.getElementById('msg1');
+           let msg2=document.getElementById('msg2');
+           let msg3=document.getElementById('msg3');
+           let msg4=document.getElementById('msg4');
+           let msg5=document.getElementById('msg5');
+           let msg6=document.getElementById('msg6');
+           
+           if(value1=='')
+           {
+               msg1.innerHTML='Firstname cannot be empty';
+               return false;
+           }
+           else if(/([0-9])/.test(value1))
+           {
+               msg1.innerHTML='Firstname does not contain digits';
+               return false;
+           }
+           else if(/[!@#$%&-,.?]/.test(value1))
+           {
+               msg1.innerHTML="Firstname does not contain special symbols";
+               return false;
+           }
+           else if(value1.length<3 || value1.length>15)
+           {
+               msg1.innerHTML="Firstname length must be 3 to 14 characters";
+               return false;
+           }
+
+           if(value2=='')
+           {
+               msg2.innerHTML='Lastname cannot be empty';
+               return false;
+           }
+           else if(/([0-9])/.test(value2))
+           {
+               msg2.innerHTML='Lastname does not contain digits';
+               return false;
+           }
+           else if(/[!@#$%&-,.?]/.test(value2))
+           {
+               msg2.innerHTML="Lastname does not contain special symbols";
+               return false;
+           }
+           else if(value2.length<3 || value2.length>15)
+           {
+               msg2.innerHTML="Lastname length must be 3 to 14 characters";
+               return false;
+           }
+
+           if(value3=='')
+           {
+               msg3.innerHTML='Username cannot be empty';
+               return false;
+           }
+           else if(/([0-9])/.test(value3))
+           {
+               msg3.innerHTML='Username does not contain digits';
+               return false;
+           }
+           else if(/[!@#$%&-,.?]/.test(value3))
+           {
+               msg3.innerHTML="Username does not contain special symbols";
+               return false;
+           }
+           else if(value3.length<3 || value3.length>15)
+           {
+               msg3.innerHTML="Username length must be 3 to 14 characters";
+               return false;
+           }
+
+           if(value4=="")
+           {
+               msg4.innerHTML="Email cannot be empty";
+               return false;
+           }
+           else if (/^@/.test(value4))
+           {
+               msg4.innerHTML="Incorrect position of @";
+               return false;
+           }
+           else if(/([a-z0-9\-.]){5,30}@([a-z0-9\-]){1,10}\.([0-9a-z\-]){1,8}\.?([0-9a-z\-]?){1,8}$/.test(value4)==false)
+           {
+               msg4.innerHTML="Invalid Email"
+               return false;
+           }
+
+           if(value5=="")
+           {
+               msg5.innerHTML="Password cannot be empty";
+               return false;
+           }
+           if(value6=="")
+           {
+               msg6.innerHTML="Confirm password cannot be empty";
+               return false;
+           }
+       }
+       function  passW() {
+           let value5=document.getElementById('i5').value;
+           let msg5=document.getElementById('msg5');
+           if(/[a-z]{1,8}/.test(value5)==false)
+           {
+               msg5.innerHTML="Password must contain a-z";
+           }
+           else if(/[A-Z]{1,8}/.test(value5)==false)
+           {
+               msg5.innerHTML="Password must contain A-Z";
+           }
+           else if(/[0-9]{1,8}/.test(value5)==false)
+           {
+               msg5.innerHTML="Password must contain 0-9";
+           }
+           else if(/[!@#$%&-,.?]/.test(value5)==false)
+           {
+               msg5.innerHTML="Password must contain special symbols";
+           }
+           else if(value5.length<8)
+           {
+               msg5.innerHTML="Weak Password";
+           }
+           else if(value5.length<11)
+           {
+               msg5.innerHTML="Medium Password"
+           }
+           else if(value5.length>11)
+           {
+               msg5.innerHTML="Strong Password";
+           }
+       }
+       function checkpass()
+       {
+           let value5=document.getElementById('i5').value;
+           let value6=document.getElementById('i6').value;
+           let msg6=document.getElementById('msg6');
+           if(value5!=value6)
+           {
+               msg6.innerHTML="Confirm Password does not match"
+           }
+           if(value5==value6)
+           {
+               msg6.innerHTML="Confirm Password match"
+           }
+       }
+       function remo1()
+       {
+          let msg=document.getElementById('msg1');
+          msg.innerHTML="";
+       }
+       function remo2()
+       {
+          let msg=document.getElementById('msg2');
+          msg.innerHTML="";
+       }
+       function remo3()
+       {
+          let msg=document.getElementById('msg3');
+          msg.innerHTML="";
+       }
+       function remo4()
+       {
+          let msg=document.getElementById('msg4');
+          msg.innerHTML="";
+       }
+       function remo5()
+       {
+          let msg=document.getElementById('msg5');
+          msg.innerHTML="";
+       }
+       function remo6()
+       {
+          let msg=document.getElementById('msg6');
+          msg.innerHTML="";
+       }
+   </script>
+</body>
+</html>

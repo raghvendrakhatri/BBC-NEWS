@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap" rel="stylesheet">    
+    <link rel="stylesheet" media="screen and (max-width:1075px)" href="login.css">
+    <link rel="stylesheet" media="screen and (max-width:795px)" href="login1.css">
+    <link rel="stylesheet" media="screen and (max-width:540px)" href="login2.css">
+    <style>
+        *
+        {
+            margin: 0px;
+            padding: 0px;
+        }
+        main
+        {
+            height: 100vh;
+            width: 100vw;
+            position: relative;
+        }
+        main::before
+        {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background: url('img24.jpg')center center/cover fixed;
+            opacity: 0.848;
+        }
+        .signin
+        {
+            position: fixed;
+            top: 8%;
+            left: 35%;
+            height: auto;
+            width: 30%;
+            background-color: rgba(117, 116, 110, 0.782);
+            border-radius: 13px;
+            box-shadow: 1px 1px 5px 3px black;
+        }
+        #head
+        {
+            text-align: center;
+            font-size: 2rem;
+            margin: 20px 5px;
+            font-family: 'Caveat', cursive;
+            position: relative;
+            /* overflow: hidden; */
+        }
+        #head::after
+        {
+            content: '';
+            display: block;
+            position: absolute;
+            right: 230px;
+            height: 4px;
+            width: 20%;
+            /* background-color: white; */
+            transition: all 0.3s linear;
+            /* overflow: hidden; */
+        }
+        #head:hover:after
+        {
+            right: 120px;
+            background-color: white;
+        }
+
+        .text
+        {
+            font-size: 1.7rem;
+            margin: 10px 0px 10px 30px;
+            font-family: 'Caveat', cursive;
+        }
+        .content
+        {
+            margin: 10px 10px 2px 30px;
+            /* border: 1px solid red; */
+            /* background-color: rgba(226, 208, 208, 0.889); */
+            background-color: rgb(160, 60, 60);
+            /* color: white; */
+            padding: 2px 5px;
+            /* box-shadow: 0px 1px 4px 1px black; */
+            border-bottom: 1px solid black;
+            border-radius: 6px;
+        }
+        .content:hover{
+            box-shadow: 0px 1px 4px 1px black;
+        }
+        .input
+        {
+            height: 24px;
+            /* width: 250px; */
+            width: 80%;
+            outline: none;
+            border: none;
+            font-size: 18px;
+            padding-left: 5px;
+            /* background-color: rgba(226, 208, 208, 0.889); */
+            background-color: rgb(160, 60, 60);
+            color:rgb(230, 215, 215);
+            font-family: 'Caveat', cursive;
+            font-size: 1.5rem;
+            
+        }
+        .icon
+        {
+            margin-right:8px;
+            font-size: 24px;
+            color: black;
+        }
+        #btn
+        {
+            height: 45px;
+            display: block;
+            width: 150px;
+            margin: 15px auto;
+            border-radius: 10px;
+            outline: none;
+            font-size: 1.4rem;
+            font-family: 'Caveat', cursive;
+            border: 2px solid black;
+            /* background: linear-gradient(to top left,  rgb(10 255 210)  0%, rgb(255 11 191)  100%); */
+            background-color: rgb(160, 60, 60);
+            color: white;
+            transition: all 0.2s linear;
+        }
+        #btn:hover
+        {
+            box-shadow: 1px 1px 5px 2px black ;
+           background-color: white;
+           color: rgb(160, 60, 60);
+        }
+        #sign-up
+        {
+            margin: 10px;
+            text-align: center;
+        }
+        #sign-up a
+        {
+            font-size: 2rem;
+            color: black;
+            font-family: 'Caveat', cursive;
+        }
+        #sign-up a:hover
+        {
+            color: azure;
+            text-shadow: 4px 4px 3px black;
+        }
+        #or
+        {
+            margin: 10px;
+            text-align: center;
+            font-size: 1.5rem;
+            font-family: 'Caveat', cursive;
+        }
+        .or
+        {
+            margin: 10px;
+            text-align: center;
+            font-size: 2rem;
+            font-family: 'Caveat', cursive;
+        }
+        .or:hover
+        {
+            color: azure;
+            text-shadow: 4px 4px 3px black;
+        }
+        #this
+        {
+            margin: 10px;
+            text-align: center;
+        }
+        .myico
+        {
+            display: inline-block;
+            height: 55px;
+            width: 55px;
+            background-color: red;
+            color:white;
+            border-radius: 50%;
+            margin-left:20px ;
+            text-align: center;
+        }
+        .myico .fa
+        {
+            font-size: 25px;
+            line-height: 55px;
+            transition: 0.2s linear;
+        }
+        .myico:hover .fa 
+        {
+            transform: scale(1.6);
+        }
+        #face{
+            background-color: #3D5A98;
+            /* transition: all 0.2s linear ; */
+        }
+        #face:hover
+        {
+            color: #3D5A98;
+            background-color: white;
+        }
+        #twit
+        {
+            background-color:#1DA1F2; 
+            /* transition: all 0.2s linear ; */
+        }
+        #twit:hover
+        {
+            background-color: white;
+            color: #1DA1F2;
+        }
+        #gog
+        {
+            background-color:rgb(219, 64, 8) ;
+            /* transition: all 0.2s linear ; */
+        }
+        #gog:hover
+        {
+            color: rgb(219, 64, 8);
+            background-color: white;
+        }
+        .msg
+        {
+            font-size: 1.4rem;
+            display: block;
+            /* font-family: 'Courier New', Courier, monospace; */
+            color: white;
+            text-align: center;
+            text-decoration: underline;
+            text-decoration-color:red;
+            font-family: 'Caveat', cursive;
+        }
+        [type="text"]::placeholder
+        {
+            color: rgb(230, 215, 215);
+            /* font-family: 'Courier New', Courier, monospace; */
+            font-family: 'Caveat', cursive;
+            font-size: 1.5rem;
+        }
+        [type="password"]::placeholder
+        {
+            color: rgb(230, 215, 215);
+            font-size: 1.5rem;
+            font-family: 'Caveat', cursive;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <form action="" name="myform" onsubmit=" return myfun()">
+        <div class="signin" id="divmy">
+            <p id="head">Sign in</p>
+            <p class="text" id="username"><label for="i1" class="lab">Username</label></p>
+            <p class="content" id="username-input"><span class="icon"><i class="fa fa-user-o" aria-hidden="true"></i>
+            </span><input type="text" class="input" placeholder="Type username here" id="i1" onblur="upper()" onfocus="fock1()"></p>
+            <span id="msg1" class="msg"></span>
+            <p class="text" id="password"><label for="i2" class="lab">Password</label></p>
+            <p class="content" id="password-input"><span class="icon"><i class="fa fa-lock" aria-hidden="true"></i>
+            </span><input type="password" class="input" placeholder="Type password here" id="i2" onfocus="fock()"></p>
+            <span id="msg2" class="msg"></span>
+            <button id="btn">Sign in</button>
+            <p id="sign-up"><a href="signup.html">Sign up</a></p>
+            <p id="or">OR</p>
+            <p class="or">login using</p>
+            <p id="this">
+            <a href="#" class="myico" id="face"><i class="fa fa-facebook" aria-hidden="true"></i>
+            </a>
+            <a href="#" class="myico" id="twit"><i class="fa fa-twitter" aria-hidden="true"></i>
+            </a>
+            <a href="#" class="myico" id="gog"><i class="fa fa-google" aria-hidden="true"></i>
+            </a></p>
+        </div>
+    </form>
+    </main>
+    <script>
+        function upper() {
+            let inp=document.getElementById('i1');
+            inp.value=inp.value.toUpperCase();   
+
+        }
+        function fock()
+        {
+            let msg2=document.getElementById('msg2');
+            msg2.innerHTML="";
+        }
+        function fock1()
+        {
+            let msg1=document.getElementById('msg1');
+            msg1.innerHTML="";
+        }
+        function myfun()
+        {
+            let value1=document.getElementById('i1').value;
+            let value2=document.getElementById('i2').value;
+            let msg1=document.getElementById('msg1');
+            let msg2=document.getElementById('msg2');
+
+            if(value1=='')
+            {
+                msg1.innerHTML="Username Cannot be empty";
+                return false;
+            }
+            else if(/[!#$@%&-]/.test(value1))
+            {
+                msg1.innerHTML='Username does not contain special characters';
+            }
+            else if(/^[A-Z]/.test(value1)==false)
+            {
+                msg1.innerHTML="Username must start with capital letter";
+                return false;
+            }
+            else if(/\d/.test(value1))
+            {
+                msg1.innerHTML="Username does not contain digits";
+                return false;
+            }
+            else if(value1.length<3 || value1.length>15)
+            {
+                msg1.innerHTML='Username Must be between 4 to 15 characters';
+                return false;
+            }
+
+            if(value2=='')
+            {
+                msg2.innerHTML="Password cannot be empty";
+                return false;
+            }
+            else if(value2.length<8)
+            {
+                msg2.innerHTML="Password length cannot be less than 8 character";
+                return false;
+            }
+        }
+    </script>
+</body>
+</html>
